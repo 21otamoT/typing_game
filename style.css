@@ -1,0 +1,61 @@
+/* タイピングゲーム全体 */
+body {
+  font-size: 6em;
+  text-align: center;
+}
+/* ゲームの残り秒数が表示されるタイマーの領域 */
+.count {
+  margin: 0;
+  font-weight: bold;
+  color: yellow;
+  text-shadow: 2px 3px 5px #aaa;
+  animation: kaiten .1s 10 linear 1s;
+}
+/* テキストが表示される領域 */
+.wrap {
+  margin-top: 20px;
+  padding: 80px 40px;
+  background:linear-gradient(to bottom right,rgb(238, 240, 169) 20%,rgb(213, 216, 126) 40%,yellow);
+  font-weight: bold;
+  color: #fff;
+  overflow: scroll;
+}
+/* 正しくタイプされた場合のテキスト */
+.typed {
+  color: lightgreen;
+}
+/* ミスタイプの場合の背景 */
+.mistyped {
+  background-color: red;
+}
+#start {
+  background:linear-gradient(to bottom right,rgb(238, 240, 169) 20%,rgb(213, 216, 126) 40%,yellow);
+  animation: more 1s infinite ease-in-out;
+  cursor: pointer;
+}
+#ster li {
+  position: fixed;
+  top: 0;
+  list-style: none;
+  width: 50px;
+  aspect-ratio: 1;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background-color: yellow;
+  animation: kaiten 1s infinite linear;
+}
+@keyframes more {
+  from {
+    transform: scale(0.8,0.8);
+  }
+  to {
+    transform: scale(1.2,1.2);
+  }
+}
+@keyframes kaiten {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
